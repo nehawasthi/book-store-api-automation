@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/your-org/qa-automation-repo.git'
+            }
+        }
+        stage('Run API Tests') {
+            steps {
+                sh './gradlew test'
+            }
+        }
+        stage('Generate Reports') {
+            steps {
+                allure([
+                    results: [[path: 'build/allure-results']]
+                ])
+                junit 'build/test-results/**/*.xml'
+            }
+        }
+    }
+}
