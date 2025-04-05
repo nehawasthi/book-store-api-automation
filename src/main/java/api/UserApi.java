@@ -5,7 +5,6 @@ import data.BookStoreData;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import models.UserResponseModel;
 
 import java.util.Random;
 

@@ -25,10 +25,10 @@ public class UserStepDefs {
         this.bookStoreData=new BookStoreData();
     }
 
-
     @Given("^Sign up to the book store as the new user with email and password$")
     public void SignUpToTheBookStoreAsTheNewUserWithValidEmailAndPassword()
     {
+
     }
 
     @When("^do the sign up with (.*) credentials$")
@@ -88,7 +88,6 @@ public class UserStepDefs {
         {
             case "successLogin":
                 bookStoreData.setAccessToken("Bearer "+bookStoreData.getLogInResponse().jsonPath().get("access_token"));
-                System.out.println(bookStoreData.getAccessToken());
                 Assert.assertNotNull(bookStoreData.getLogInResponse().jsonPath().get("access_token"),"Token is not generated after login");
                 Assert.assertEquals(bookStoreData.getLogInResponse().jsonPath().get("token_type"),"bearer","Token generated type is not bearer");
                 break;
@@ -219,7 +218,6 @@ public class UserStepDefs {
 
     @Then("verify the details of books that listed")
     public void verifyTheDetailsOfBooksThatListed() {
-        System.out.println(allBooksList);
         for(HashMap<String,Object> eachData:allBooksList)
         {
             System.out.println(bookStoreData.getFetchAllBooks().contains(eachData));

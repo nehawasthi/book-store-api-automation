@@ -8,16 +8,10 @@ import java.util.Properties;
 
 public class ConfigLoader {
     private static final Properties properties = new Properties();
-    static {
-        setUp();
-    }
 
-
-    @BeforeAll
     public static void setUp()
     {
-//        String configFilePath = System.getProperty("spring.config.location");
-        String configFilePath="application-UATB.properties";
+        String configFilePath="src/test/resources/application-UATB.properties";
         try (InputStream input = ConfigLoader.class.getClassLoader().getResourceAsStream(configFilePath)) {
             if (input == null) {
                 throw new RuntimeException("Properties file not found: " + configFilePath);
