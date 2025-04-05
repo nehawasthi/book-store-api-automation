@@ -27,10 +27,12 @@ pipeline {
 
   post {
     always {
-      allure([
-        reportBuildPolicy: 'ALWAYS',
-        results: [[path: 'target/allure-results']]
-      ])
+      node {
+        allure([
+          reportBuildPolicy: 'ALWAYS',
+          results: [[path: 'target/allure-results']]
+        ])
+      }
     }
   }
 }
