@@ -1,0 +1,1 @@
+{"uuid":"cfc0598a-87cc-4e8f-8006-41fb79784861","name":"Scenario Outline: Validating the sign up with wrong input credentials and verify the error handling for <email> and <password>","children":["7908f400-e871-4511-8036-94abba9f7d8f"],"befores":[],"afters":[],"start":1743824571640,"stop":1743824571676}

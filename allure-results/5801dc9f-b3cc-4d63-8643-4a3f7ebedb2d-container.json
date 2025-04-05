@@ -1,0 +1,1 @@
+{"uuid":"5801dc9f-b3cc-4d63-8643-4a3f7ebedb2d","name":"Scenario: Verify by logging with the credentials which is not yet signed into bookstore system","children":["b6657bd0-3f53-44e8-9c3c-67a82ed24ddd"],"befores":[],"afters":[],"start":1743824320904,"stop":1743824320938}

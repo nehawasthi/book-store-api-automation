@@ -1,0 +1,1 @@
+{"uuid":"4f6d20c5-1a47-4ab4-854d-502ff1176914","name":"Scenario: Sign up as a new user with valid credentials and login with same and verify the token getting generated","children":["2e56032d-9b2f-4629-a56d-dc884838a958"],"befores":[],"afters":[],"start":1743824571804,"stop":1743824571838}

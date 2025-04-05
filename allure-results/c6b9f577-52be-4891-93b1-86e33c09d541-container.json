@@ -1,0 +1,1 @@
+{"uuid":"c6b9f577-52be-4891-93b1-86e33c09d541","name":"Scenario: Add new book , update the book details and verify them in list and fetch book details","children":["9e2f00ca-34d8-46c5-b95b-9289031c7b2d"],"befores":[],"afters":[],"start":1743824568277,"stop":1743824571013}

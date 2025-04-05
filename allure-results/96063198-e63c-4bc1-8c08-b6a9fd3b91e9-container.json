@@ -1,0 +1,1 @@
+{"uuid":"96063198-e63c-4bc1-8c08-b6a9fd3b91e9","name":"Scenario: Signup with new email id and verify the success response and also validate with existing credentials for sign up error","children":["f68de17f-cc5c-407a-9894-182f05029120"],"befores":[],"afters":[],"start":1743823988215,"stop":1743823991243}
