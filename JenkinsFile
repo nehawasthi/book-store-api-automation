@@ -1,23 +1,36 @@
 pipeline {
-    agent any
-    stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/your-org/qa-automation-repo.git'
-            }
-        }
-        stage('Run API Tests') {
-            steps {
-                sh './gradlew test'
-            }
-        }
-        stage('Generate Reports') {
-            steps {
-                allure([
-                    results: [[path: 'build/allure-results']]
-                ])
-                junit 'build/test-results/**/*.xml'
-            }
-        }
+  agent any
+
+  tools {
+    maven 'Maven 3.6.3'
+  }
+
+  stages {
+    stage('Checkout') {
+      steps {
+        git url: 'https://github.com/Lishagopi/book-store-api-automation.git', branch: 'master'
+      }
     }
+
+    stage('Build and Test') {
+      steps {
+        sh 'mvn clean test'
+      }
+    }
+
+    stage('Generate Allure Report') {
+      steps {
+        sh 'mvn allure:report'
+      }
+    }
+  }
+
+  post {
+    always {
+      allure([
+        reportBuildPolicy: 'ALWAYS',
+        results: [[path: 'target/allure-results']]
+      ])
+    }
+  }
 }
